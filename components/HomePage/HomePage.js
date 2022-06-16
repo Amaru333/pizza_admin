@@ -12,11 +12,10 @@ function HomePage() {
     // console.log("test");
   }, []);
   const product_data = useSelector(getProducts);
-  console.log(product_data, "AAAAAAAAAAA");
   return (
-    <div className="grid sm:grid-cols-3 lg:grid-cols-2 gap-5">
+    <div className="grid sm:grid-cols-3 lg:grid-cols-2 gap-5 p-5">
       {product_data?.map((product, index) => (
-        <div key={index} className="sm:w-56 lg:w-full col-span-1 shadow-lg ">
+        <div key={index} className="sm:w-56 lg:w-full col-span-1 shadow-lg rounded-r-lg">
           <Card data={product} />
         </div>
       ))}
