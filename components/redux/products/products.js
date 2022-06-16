@@ -10,13 +10,16 @@ const initialState = {
 };
 
 //Get products
-export const getProductDetails = createAsyncThunk("products/get", async (thunkAPI) => {
-  try {
-    return await productsService.getProducts();
-  } catch (error) {
-    const message = error.response.data.message || error.toString();
-    return thunkAPI.rejectWithValue(message);
-  }
+export const getProductDetails = createAsyncThunk("products/get", async (thunkAPI, { getState }) => {
+  const { product } = getState();
+  if (product?.data?.length == 0) {
+    try {
+      return await productsService.getProducts();
+    } catch (error) {
+      const message = error.response.data.message || error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  } else return product?.data;
 });
 
 export const productSlice = createSlice({
@@ -24,7 +27,9 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => {
-      (state.isError = null), (state.isLoading = null), (state.message = "");
+      state.isError = null;
+      state.isLoading = null;
+      state.message = "";
     },
   },
   extraReducers: (builder) => {
@@ -33,10 +38,13 @@ export const productSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getProductDetails.fulfilled, (state, action) => {
-        (state.isLoading = false), (state.data = action.payload);
+        state.isLoading = false;
+        state.data = action.payload;
       })
       .addCase(getProductDetails.rejected, (state, action) => {
-        (state.isLoading = false), (state.data = action.payload), (state.message = action.payload);
+        state.isLoading = false;
+        state.data = action.payload;
+        state.message = action.payload;
         state.data = null;
       });
   },

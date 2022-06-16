@@ -8,7 +8,7 @@ function RadioSelect({ name, required, options, onChange }) {
         <div className="items-center grid grid-cols-3 gap-4">
           {options.map((option) => (
             <div className="flex items-center">
-              <input id={option.slug} name="push-notifications" type="radio" className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" onClick={(e) => onChange(e.target.id)} />
+              <input id={option.slug} name="push-notifications" type="radio" className="focus:ring-apptheme-100 h-4 w-4 text-apptheme-200 border-gray-300" onClick={(e) => onChange(e.target.id)} />
               <label htmlFor={option.slug} className="ml-3 block text-sm font-medium text-gray-700">
                 {option.name}
               </label>

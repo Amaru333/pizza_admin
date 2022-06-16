@@ -73,17 +73,10 @@ function AddProduct() {
     },
   ];
   const [value, setValue] = useState({});
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(value);
-  // };
-  // console.log(value);
   const [uploadedImages, setUploadedImages] = useState([]);
 
   const counterValue = useSelector(getValue);
   const dispatch = useDispatch();
-
-  console.log(counterValue, "VALLLLLLLL");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -168,7 +161,7 @@ function AddProduct() {
                       </div> */}
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                  <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-apptheme-100 hover:bg-apptheme-200 focus:outline-none focus:ring-2 focus:ring-offset-2">
                     Save
                   </button>
                 </div>

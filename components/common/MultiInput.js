@@ -13,7 +13,7 @@ function MultiInput({ name, required, type, slug, value, onChange, options }) {
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <span className="text-gray-500 sm:text-sm">₹</span>
                 </div>
-                <input type={option.type} value={value?.[option.slug] || ""} onChange={(e) => onChange(e, option)} required={required} className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300 pl-7" />
+                <input type={option.type} value={value?.[option.slug] || ""} onChange={(e) => onChange(e, option)} required={required} className="focus:ring-apptheme-100 focus:border-apptheme-100 flex-1 block w-full rounded-md sm:text-sm border-gray-300 pl-7" />
               </div>
             </>
           ))}

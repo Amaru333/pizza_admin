@@ -9,9 +9,9 @@ function HomePage() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductDetails());
-    // console.log("test");
   }, []);
   const product_data = useSelector(getProducts);
+  console.log(product_data, "AYAYAYAYAY");
   return (
     <div className="grid sm:grid-cols-3 lg:grid-cols-2 gap-5 p-5">
       {product_data?.map((product, index) => (

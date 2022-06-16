@@ -7,7 +7,7 @@ function TextArea({ name, required, type, slug, value, onChange }) {
         {name}
       </label>
       <div className="mt-1">
-        <textarea type={type} value={value || ""} onChange={onChange} required={required} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder={name} />
+        <textarea type={type} value={value || ""} onChange={onChange} required={required} className="shadow-sm focus:ring-apptheme-100 focus:border-apptheme-100 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder={name} />
       </div>
     </div>
   );
