@@ -25,8 +25,8 @@ function Navbar() {
 
   return (
     <div className="bg-apptheme-100 text-white h-screen sticky left-0 top-0 flex flex-col justify-center">
-      {menu_items.map((item) => (
-        <p className="p-2 pl-5 text-base flex hover:bg-apptheme-200 cursor-pointer transition-all" onClick={() => router.push(item.route)}>
+      {menu_items.map((item, index) => (
+        <p className="p-2 pl-5 text-base flex hover:bg-apptheme-200 cursor-pointer transition-all" onClick={() => router.push(item.route)} key={index}>
           {renderIcon(item.icon)}
           <span className="pl-3">{item.name}</span>
         </p>
